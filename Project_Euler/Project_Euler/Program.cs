@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -13,34 +13,26 @@ namespace Project_Euler
         {
             int kolmonen = 3;
             int vitonen = 5;
-            int loppuluku_1 = 0;
-            int loppuluku_2 = 0;
             List<int> lista = new List<int>();
+       
 
-            foreach(int index in Enumerable.Range(1, 1000))
+            foreach(int index in Enumerable.Range(1, 999))
             {
-                if (index % kolmonen == 0)
-                {
-                    lista.Add(index);
-                }
-
-                else if (index % vitonen == 0 && !lista.Contains(index))
+                if (index % kolmonen == 0 || index % vitonen == 0 && !lista.Contains(index))
                 {
                     lista.Add(index);
                 }
             }
 
-            int numero = 0;
+            int tulos = 0;
 
             for (int i = 0; i < lista.Count; i++)
             {
-                numero = numero + lista[i];
+                tulos = tulos + lista[i];
             }
-            Console.WriteLine("Luku on: " + numero);
+            Console.WriteLine("Luku on: " + tulos);
+
             Console.ReadLine();
         }
     }
 }
-
-
-// testaa jokainen numero yhdestä tuhanteen. Jos lukujen 3 ja 5 jakojäännös on nolla, on luku kolmen tai viiden kerroin.
